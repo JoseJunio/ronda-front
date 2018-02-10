@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="rondaApp">
+    <head>
+        <title>Ronda</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+    </head>
+    <body ng-app="rondaApp">
+
+        <div ng-controller="EmployeesController">
+            <!-- Cadastro -->
+            <form>
+                <h1>Cadastro Funcionário</h1>
+                <label for="codigo">Código: </label>
+                <input id="id" name="id" type="text" ng-model="employee.id"/>
+
+                <label for="employee">Funcionário: </label>
+                <input id="employee" name="employee" type="text" ng-model="employee.name"/>
+
+                <label for="cargo">Cargo: </label>
+                <input id="cargo" name="cargo" type="text" ng-model="employee.cargo"/>
+                    
+                <button ng-click="save(employee)">Salvar</button>
+                <button ng-click="cancelar()">Cancelar</button>
+            </form>    
+
+            <!-- Tabela -->
+            <br>
+            <h1>Funcionários</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Funcionário</th>
+                        <th>Cargo</th>
+                    </tr>    
+                </thead>
+                <tbody>
+                    <tr ng-repeat="employee in employees">
+                        <td ng-dblclick="update(employee)">{{employee.id}}</td>
+                        <td ng-dblclick="update(employee)">{{employee.name}}</td>
+                        <td ng-dblclick="update(employee)">{{employee.cargo}}</td>
+                        <td><button ng-click="remove(employee)">Excluir</button></td>
+                        <td><button ng-click="update(employee)">Editar</button></td>
+                    </tr>    
+                </tbody>
+            </table>
+        </div>
+        <!-- Alteração -->
+        
+        <!-- Exclusão -->
+        
+        <script src="js/angular.min.js"></script>
+        <script src="js/employee/employee.service.js"></script>
+        <script src="js/employee/employee.controller.js"></script>
+        <!--<script>
+           var app = angular.module('rondaApp', []); 
+        </script>-->
+    </body>
+</html>
