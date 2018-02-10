@@ -3,6 +3,8 @@ var connect = require('gulp-connect');
 var inject = require('gulp-inject');
 var include = require("gulp-include");;
 
+var portListen = process.env.PORT || 5000;
+
 gulp.task('index', function() {
     var target = gulp.src('app/index.html');
    
@@ -43,11 +45,15 @@ gulp.task('watch', function() {
 
 gulp.task('default', ['connect', 'watch', 'index']);
 
-
 gulp.task('serveprod', function() {
     connect.server({
         root: 'app',
         port: process.env.PORT || 5000, // localhost:5000
         livereload: false
     });
+
+    connect.listen(portListen, "0.0.0.0", function(){
+        console.log("Listening on Port 5000");
+    });
 });
+
