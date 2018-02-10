@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var connect = require('gulp-connect');
 var inject = require('gulp-inject');
 var include = require("gulp-include");;
+var app     = require("express");
 
 gulp.task('index', function() {
     var target = gulp.src('app/main.html');

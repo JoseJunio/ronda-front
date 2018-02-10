@@ -4,6 +4,7 @@
   "description": "Aplicativo para Ronda",
   "main": "gulpfile.js",
   "dependencies": {
+  	"express":"*",
   	"hapi": "^17.2.0",
     "gulp": "^3.9.1",
     "gulp-build": "^0.5.3",
@@ -13,6 +14,7 @@
     "gulp-livereload":"^3.8.1"
   },
   "devDependencies": {
+  	"express":"*",
   	"hapi": "^17.2.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
