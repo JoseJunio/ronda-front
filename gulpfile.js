@@ -4,7 +4,7 @@ var inject = require('gulp-inject');
 var include = require("gulp-include");;
 
 gulp.task('index', function() {
-    var target = gulp.src('app/main.html');
+    var target = gulp.src('app/index.html');
    
     return target.pipe();
 
