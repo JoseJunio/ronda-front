@@ -2,6 +2,11 @@ var gulp = require('gulp');
 var connect = require('gulp-connect');
 var inject = require('gulp-inject');
 var include = require("gulp-include");
+var express = require("express");
+var app     = express();
+
+var server_port = process.env.PORT || 5000;
+var server_host = '0.0.0.0';
 
 gulp.task('index', function() {
     var target = gulp.src('app/main.html');
@@ -50,4 +55,8 @@ gulp.task('serveprod', function() {
         port: process.env.PORT, // localhost:5000
         livereload: false
     });
+});
+
+app.listen(server_port, server_host, function() {
+    console.log('Listening on port %d', server_port);
 });
