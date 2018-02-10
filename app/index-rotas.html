@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="br">
+
+<head ng-app="rondaApp">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Ronda</title>
+
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="css/sb-admin.css" rel="stylesheet">
+
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top" ng-app="rondaApp">
+
+ <<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <a class="navbar-brand" href="ronda.html">Ronda</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="ronda.html">
+            <span class="nav-link-text">Funcionários</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" href="index-rotas.html">
+            <span class="nav-link-text">Rotas</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+          <a class="nav-link" href="index-localizacao.html">
+            <span class="nav-link-text">Localização</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+          <a class="nav-link" href="index-empresa.html">
+            <span class="nav-link-text">Empresa</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="content-wrapper" ng-controller="EmployeesController">
+    <div class="container-fluid">
+
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Cadastro</a>
+        </li>
+        <li class="breadcrumb-item">Funcionários</li>
+      </ol>
+      <ol class="breadcrumb">
+        <form role="form">
+              <div class="row">
+               <!--<div class="form-group col-lg-4">
+                  <label for="id">ID</label>
+                  <input type="number" class="form-control" id="id" placeholder="ID" ng-model="employee.id">
+                </div>-->
+                <div class="form-group col-lg-8">
+                  <label for="funcionario">Funcionário</label>
+                  <input type="text" class="form-control" id="name" placeholder="Nome" ng-model="employee.name">
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-lg-8">
+                  <label for="cargo">Cargo</label>
+                  <input type="text" class="form-control" id="cargo" placeholder="Cargo"  ng-model="employee.cargo">
+                </div>
+              </div>
+              <div class="box-actions">
+                <button ng-click="save(employee)" class="btn btn-success">Salvar</button>
+                <button ng-click="cancelar()" class="btn btn-danger">Cancelar</button>
+              </div>
+        </form>
+    
+      </ol>-
+
+     <div class="card mb-3">
+        <div class="card-header">
+            Funcionários
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Funcionário</th>
+                  <th>Cargo</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+                <tr ng-repeat="employee in employees">
+                    <td ng-dblclick="update(employee)">{{employee.id}}</td>
+                    <td ng-dblclick="update(employee)">{{employee.name}}</td>
+                    <td ng-dblclick="update(employee)">{{employee.cargo}}</td>
+                    <td><button class="btn btn-primary" ng-click="remove(employee)">Excluir</button></td>
+                    <td><button class="btn btn-danger" ng-click="update(employee)">Editar</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <!--<script src="js/angular/angular.min.js"></script>-->
+  <script src="js/angular/angular/angular.js"></script>
+  <script src="js/angular/angular-aria/angular-aria.js"></script>
+  <script src="js/angular/angular-animate/angular-animate.js"></script>
+  <script src="js/angular/angular-material/angular-material.js"></script>
+  
+  
+  <script src="js/ronda.module.js"></script>
+  <script src="js/employee/employee.service.js"></script>
+  <script src="js/employee/employee.controller.js"></script>
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="js/sb-admin/sb-admin.min.js"></script>
+ 
+</body>
+</html>
+
