@@ -58,6 +58,6 @@ gulp.task('serveprod', function() {
 
 });
 
-app.listen(app.get('port'), "0.0.0.0",  function() {
+app.listen(5000, "0.0.0.0",  function() {
   console.log('Node app is running on port', app.get('port'));
 });
