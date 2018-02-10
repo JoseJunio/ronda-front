@@ -55,8 +55,9 @@ gulp.task('serveprod', function() {
         port: process.env.PORT, // localhost:5000
         livereload: false
     });
+
+    app.listen(server_port, server_host, function() {
+        console.log('Listening on port %d', server_port);
+    });
 });
 
-app.listen(server_port, server_host, function() {
-    console.log('Listening on port %d', server_port);
-});
