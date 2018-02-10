@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var connect = require('gulp-connect');
 var inject = require('gulp-inject');
-var include = require("gulp-include");
+var include = require("gulp-include");;
 
 gulp.task('index', function() {
     var target = gulp.src('app/main.html');
@@ -43,13 +43,14 @@ gulp.task('watch', function() {
 
 gulp.task('default', ['connect', 'watch', 'index']);
 
+server.listen(5000, "0.0.0.0", function(){
+    console.log("Listening on Port 5000");
+});
 
 gulp.task('serveprod', function() {
     connect.server({
         root: 'app',
         port: process.env.PORT || 5000, // localhost:5000
-        livereload: true,
-        livereload.port: 5000,
-        livereload.hostname: "0.0.0.0"
+        livereload: false
     });
 });
