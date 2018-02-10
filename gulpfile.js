@@ -41,17 +41,6 @@ gulp.task('watch', function() {
     gulp.watch(['./app/**/*.css'], ['css']);
 });
 
-gulp.task('copy-AvailFormsAngular', function() {
-    gulp.src(['./node_modules/AvailFormsAngular/src/**/*.js', './node_modules/AvailFormsAngular/src/**/*.html', './node_modules/AvailFormsAngular/src/**/*.css'])
-        .pipe(gulp.dest('./app/src/AvailFormsAngular'));
-
-    gulp.src(['./node_modules/AvailFormsAngular/libs/**/*'])
-        .pipe(gulp.dest('./app/src/AvailFormsAngular/libs'));
-
-    gulp.src(['./node_modules/AvailFormsAngular/admLTE/**/*'])
-        .pipe(gulp.dest('./app/src/AvailFormsAngular/admLTE'));
-});
-
 gulp.task('default', ['connect', 'watch', 'index']);
 
 
