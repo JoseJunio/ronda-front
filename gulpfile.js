@@ -51,7 +51,7 @@ gulp.task('default', ['connect', 'watch', 'index']);
 gulp.task('serveprod', function() {
     connect.server({
         root: 'app',
-        port: process.env.PORT || 5000, // localhost:5000
+        port: 5000, // localhost:5000
         livereload: false
     });
 
@@ -59,5 +59,5 @@ gulp.task('serveprod', function() {
 });
 
 app.listen(5000, "0.0.0.0",  function() {
-  console.log('Node app is running on port', app.get('port'));
+  console.log('Node app is running on port', 5000);
 });
