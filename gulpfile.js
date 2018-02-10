@@ -2,8 +2,9 @@ var gulp = require('gulp');
 var connect = require('gulp-connect');
 var inject = require('gulp-inject');
 var include = require("gulp-include");;
+var hapi = require('hapi');
 
-var portListen = process.env.PORT || 5000;
+var server = hapi.server({host: "0.0.0.0", port: 5000})
 
 gulp.task('index', function() {
     var target = gulp.src('app/index.html');
@@ -16,7 +17,7 @@ gulp.task('connect', function() {
     connect.server({
         root: 'app',
         livereload: true,
-        port: 8081
+        port: 5000
     });
 });
 
@@ -51,9 +52,11 @@ gulp.task('serveprod', function() {
         port: process.env.PORT || 5000, // localhost:5000
         livereload: false
     });
-
-    connect.listen(portListen, "0.0.0.0", function(){
-        console.log("Listening on Port 5000");
-    });
 });
+
+
+
+
+
+
 
