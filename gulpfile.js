@@ -52,12 +52,10 @@ gulp.task('default', ['connect', 'watch', 'index']);
 gulp.task('serveprod', function() {
     connect.server({
         root: 'app',
+        host: '0.0.0.0',
         port: process.env.PORT, // localhost:5000
-        livereload: false
-    });
-
-    app.listen(server_port, server_host, function() {
-        console.log('Listening on port %d', server_port);
+        livereload: false,
+        open: false
     });
 });
 
