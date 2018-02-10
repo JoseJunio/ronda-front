@@ -2,10 +2,6 @@ var gulp = require('gulp');
 var connect = require('gulp-connect');
 var inject = require('gulp-inject');
 var include = require("gulp-include");
-var express = require('express');
-var app     = express();
-
-app.set('port', (process.env.PORT || 5000));
 
 gulp.task('index', function() {
     var target = gulp.src('app/main.html');
@@ -51,13 +47,7 @@ gulp.task('default', ['connect', 'watch', 'index']);
 gulp.task('serveprod', function() {
     connect.server({
         root: 'app',
-        port: 5000, // localhost:5000
+        port: process.env.PORT, // localhost:5000
         livereload: false
     });
-
-
-});
-
-app.listen(5000, "0.0.0.0",  function() {
-  console.log('Node app is running on port', 5000);
 });
