@@ -2,12 +2,9 @@ var gulp = require('gulp');
 var connect = require('gulp-connect');
 var inject = require('gulp-inject');
 var include = require("gulp-include");;
-var hapi = require('hapi');
-
-var server = hapi.server({host: "0.0.0.0", port: 5000})
 
 gulp.task('index', function() {
-    var target = gulp.src('app/index.html');
+    var target = gulp.src('app/main.html');
    
     return target.pipe();
 
@@ -17,7 +14,7 @@ gulp.task('connect', function() {
     connect.server({
         root: 'app',
         livereload: true,
-        port: 5000
+        port: 8081
     });
 });
 
@@ -46,17 +43,11 @@ gulp.task('watch', function() {
 
 gulp.task('default', ['connect', 'watch', 'index']);
 
+
 gulp.task('serveprod', function() {
     connect.server({
         root: 'app',
-        port: process.env.PORT || 5000, // localhost:5000
+        port: 5000, // localhost:5000
         livereload: false
     });
 });
-
-
-
-
-
-
-
