@@ -5,7 +5,7 @@ var include = require("gulp-include");
 var express = require("express");
 var app     = express();
 
-var server_port = process.env.PORT || 5000;
+var server_port = 5000;
 var server_host = '0.0.0.0';
 
 gulp.task('index', function() {
