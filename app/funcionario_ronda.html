@@ -85,18 +85,47 @@
                 </div>
             </div>
             
-            <div style="margin: 1px 1px 10px" ng-repeat="day in week" class="row">  
-              <div ng-repeat="inicio in horarioInicio">
-                <div ng-repeat="fim in horarioFim" >
-                  <input type="checkbox" ng-model="day.selected">
+            <!--<div style="margin: 1px 1px 10px" ng-repeat="day in week" class="row">  
+              <input type="checkbox" ng-model="day.selected">
                   <label style="margin: -6px 10px">{{ day.dia }}</label>
                   <input type="time" name="time" ng-model="inicio.in" />
                   <input type="time" name="time" ng-model="fim.out"/>
-                </div>
-              </div>  
+            </div>-->
+
+            <div style="margin: 1px 1px 10px" class="row">  
+              <input type="checkbox" ng-model="week[0].selected">
+                  <label style="margin: -6px 10px">{{ week[0].dia }}</label>
             </div>
-              
+
+            <div style="margin: 1px 1px 10px" class="row">  
+              <input type="checkbox" ng-model="week[1].selected">
+                  <label style="margin: -6px 10px">{{ week[1].dia }}</label>
+            </div>
             
+            <div style="margin: 1px 1px 10px" class="row">  
+              <input type="checkbox" ng-model="week[2].selected">
+                  <label style="margin: -6px 10px">{{ week[2].dia }}</label>
+            </div>
+
+            <div style="margin: 1px 1px 10px" class="row">  
+              <input type="checkbox" ng-model="week[3].selected">
+                  <label style="margin: -6px 10px">{{ week[3].dia }}</label>
+            </div>
+
+            <div style="margin: 1px 1px 10px" class="row">  
+              <input type="checkbox" ng-model="week[4].selected">
+                  <label style="margin: -6px 10px">{{ week[4].dia }}</label>
+            </div>
+
+            <div style="margin: 1px 1px 10px" class="row">  
+              <input type="checkbox" ng-model="week[5].selected">
+                  <label style="margin: -6px 10px">{{ week[5].dia }}</label>
+            </div>
+
+            <div style="margin: 1px 1px 10px" class="row">  
+              <input type="checkbox" ng-model="week[6].selected">
+                  <label style="margin: -6px 10px">{{ week[6].dia }}</label>
+            </div>
 
             <div class="box-actions">
                 <button ng-click="save()" class="btn btn-success">Salvar</button>
