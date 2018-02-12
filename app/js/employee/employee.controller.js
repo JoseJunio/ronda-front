@@ -49,7 +49,7 @@ angular.
             for(var emp=0; emp<$scope.employees.length; emp++){
                 if($scope.employees[emp].usuario === employee.usuario && $scope.employees[emp].senha === employee.senha){
                     userNotFound = true; 
-                    $window.location.href = $window.location.href.replace('/main.html', '/index.html');
+                    $window.location.href = $window.location.href.replace('/index.html', '/ronda.html');
                     break;
                 }
             }
