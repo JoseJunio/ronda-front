@@ -1,15 +1,19 @@
 angular.
 module("rondaApp")
-.controller("FuncRondaController", ['$scope', '$filter', 'FuncRondaService', '$window', '$location', '$mdDialog', function($scope, FuncRondaService, $window, $filter, $location, $mdDialog){
+.controller("FuncRondaController", ['$scope', 'FuncRondaService', '$window', '$location', '$mdDialog', function($scope, FuncRondaService, $window, $location, $mdDialog){
        
     $scope.listEmployees        = [];   
     $scope.listLocais           = [];
-    
 
 
     $scope.horarioFim           = [];
     $scope.week                 = [{dia: 'Segunda'}, {dia: 'Terça'}, {dia:'Quarta'}, {dia: 'Quinta'}, {dia: 'Sexta'}, {dia: 'Sábado'}, {dia:'Domingo'}];
     $scope.selectedDays         = [];
+    $scope.start_time           = [];
+    $scope.start_time.length    = 7;
+    $scope.end_time             = [];
+    $scope.end_time.length      = 7;
+    
     $scope.save          = save;  
         
     list();    
@@ -52,7 +56,7 @@ module("rondaApp")
         angular.forEach($scope.week, function(day){
           if (day.selected){
             console.log(day.dia);
-            console.log(horarios[0].timein1);
+            console.log(horarioInicio[0]);
           } 
         });
 
