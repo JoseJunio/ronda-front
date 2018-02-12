@@ -5,7 +5,7 @@ module("rondaApp")
     $scope.listEmployees        = [];   
     $scope.listLocais           = [];
     
-    $scope.horarioinicio        = [];
+    $scope.horarioInicio        = [];
     $scope.horarioFim           = [];
     $scope.week                 = [{dia: 'Segunda'}, {dia: 'Terça'}, {dia:'Quarta'}, {dia: 'Quinta'}, {dia: 'Sexta'}, {dia: 'Sábado'}, {dia:'Domingo'}];
     $scope.selectedDays         = [];

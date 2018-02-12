@@ -14,7 +14,5 @@ angular.
            return $http.get(apiLocais);
        }
        
-       
-       
 
     }]);
