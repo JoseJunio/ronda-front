@@ -4,7 +4,7 @@ angular.
         
         var that = this;
 
-        var api = "http://localhost:8080/api/webresources/employees";
+        var api = "https://ronda-back.herokuapp.com/api/funcionario";//"http://localhost:8080/api/webresources/employees";
         
         that.getEmployees = function(){
          return $http.get(api);
@@ -39,15 +39,18 @@ angular.
             }*/
             
             if(employee.id){
-               return $http.put(api + "/" + employee.id, employee);
+               //return $http.put(api + "/" + employee.id, employee);
+			   return $http.put(api, employee);
             }else{
-               return $http.post(api, employee);
+			   return $http.post(api, employee);
+               //return $http.post(api, employee);
             }
           
         };
         
         that.delete = function(employee){
-          return $http.delete(api + "/" + employee.id);
-        };
+          //return $http.delete(api + "/" + employee.id);
+		  return $http.delete(api, employee);
+		};
                        
     }]);
