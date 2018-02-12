@@ -52,8 +52,15 @@ module("rondaApp")
     }
        
     function save(){
-        alert($scope.func1);
-        alert($scope.func2);
+
+        angular.forEach($scope.week, function(day){
+          if (day.selected){
+            console.log(day.dia);
+          } 
+        });
+
+
+
     }   
        
 }]);
