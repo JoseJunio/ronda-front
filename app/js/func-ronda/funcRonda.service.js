@@ -3,8 +3,8 @@ angular.
     .service("FuncRondaService", ['$http', function($http){
 
         var that = this;
-        var apiLocais    = "http://localhost:8080/api/webresources/locais";
-        var apiEmployees = "http://localhost:8080/api/webresources/employees";
+        var apiLocais    = "https://ronda-back.herokuapp.com/api/local";
+        var apiEmployees = "https://ronda-back.herokuapp.com/api/funcionario";
        
        that.getEmployees = function(){
            return $http.get(apiEmployees);
