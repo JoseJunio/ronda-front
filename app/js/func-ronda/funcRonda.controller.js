@@ -7,7 +7,12 @@ module("rondaApp")
 
     $scope.week                 = [{dia: 'Segunda'}, {dia: 'Terça'}, {dia:'Quarta'}, {dia: 'Quinta'}, {dia: 'Sexta'}, {dia: 'Sábado'}, {dia:'Domingo'}];
     $scope.save          = save;  
+    
+    $scope.hourMondayIn;  
+    $scope.hourMondayOut;  
         
+
+
     list();    
         
     function list(){
@@ -48,7 +53,8 @@ module("rondaApp")
         angular.forEach($scope.week, function(day){
           if (day.selected){
             console.log(day.dia);
-            console.log(horarioInicio[0]);
+            console.log($scope.hourMondayIn);
+            console.log($scope.hourMondayOut);
           } 
         });
 
