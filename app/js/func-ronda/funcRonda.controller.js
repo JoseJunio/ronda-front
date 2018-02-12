@@ -56,6 +56,7 @@ module("rondaApp")
         angular.forEach($scope.week, function(day){
           if (day.selected){
             console.log(day.dia);
+            console.log(horarioInicio[0]);
           } 
         });
 
