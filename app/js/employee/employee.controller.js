@@ -34,11 +34,6 @@ angular.
             $scope.employee = {};
         }
         
-        function list(){
-            EmployeesService.getEmployees().then(function(response){
-                $scope.employees = response.data; 
-            });
-        }
           
         function verifyLogin(employee){
             

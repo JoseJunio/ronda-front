@@ -77,11 +77,11 @@
             <div class="row">
                 <div class="form-group col-lg-4">
                   <label for="funcionario">Código do Funcionário</label>
-                  <select style="width: 100px; border-radius: 4px;" ng-options="o.id for o in listEmployees" ng-model="func1"></select>
+                  <select style="width: 100px; border-radius: 4px;" ng-options="o.id for o in listEmployees" ng-model="codfunc"></select>
                 </div>
                 <div class="form-group col-lg-8">
                   <label for="local">Código da Ronda</label>
-                  <select style="width: 100px; border-radius: 4px;" ng-options="o.id for o in listLocais" ng-model="func2"></select>
+                  <select style="width: 100px; border-radius: 4px;" ng-options="o.id for o in listLocais" ng-model="codlocal"></select>
                 </div>
             </div>
             
@@ -91,12 +91,62 @@
                   <input type="time" name="time" ng-model="inicio.in" />
                   <input type="time" name="time" ng-model="fim.out"/>
             </div>-->
+            <!-- Segunda -->
             <div style="margin: 1px 1px 10px" class="row">  
               <input type="checkbox" ng-model="week[0].selected">
                   <label style="margin: -6px 10px">{{ week[0].dia }}</label>
                   <input type="time" name="time" ng-model="hourMondayIn" />
                   <input type="time" name="time" ng-model="hourMondayOut"/>
             </div>
+
+            <!-- Terça -->
+            <!--<div style="margin: 1px 1px 10px" class="row">  
+              <input type="checkbox" ng-model="week[1].selected">
+                  <label style="margin: -6px 10px">{{ week[1].dia }}</label>
+                  <input type="time" name="time" ng-model="hourTuesdayIn" />
+                  <input type="time" name="time" ng-model="hourTuesdayOut"/>
+            </div>-->
+
+            <!-- Quarta -->
+            <!--<div style="margin: 1px 1px 10px" class="row">  
+              <input type="checkbox" ng-model="week[2].selected">
+                  <label style="margin: -6px 10px">{{ week[2].dia }}</label>
+                  <input type="time" name="time" ng-model="hourWednesdayIn" />
+                  <input type="time" name="time" ng-model="hourWednesdayOut"/>
+            </div>-->
+
+            <!-- Quinta -->
+            <!--<div style="margin: 1px 1px 10px" class="row">  
+              <input type="checkbox" ng-model="week[3].selected">
+                  <label style="margin: -6px 10px">{{ week[3].dia }}</label>
+                  <input type="time" name="time" ng-model="hourThursdayIn" />
+                  <input type="time" name="time" ng-model="hourThursdayOut"/>
+            </div>-->
+
+            <!-- Sexta -->
+            <!--<div style="margin: 1px 1px 10px" class="row">  
+              <input type="checkbox" ng-model="week[4].selected">
+                  <label style="margin: -6px 10px">{{ week[4].dia }}</label>
+                  <input type="time" name="time" ng-model="hourFridayIn" />
+                  <input type="time" name="time" ng-model="hourFridayOut"/>
+            </div>-->
+
+            <!-- Sábado -->
+            <!--<div style="margin: 1px 1px 10px" class="row">  
+              <input type="checkbox" ng-model="week[5].selected">
+                  <label style="margin: -6px 10px">{{ week[5].dia }}</label>
+                  <input type="time" name="time" ng-model="hourSaturdayIn" />
+                  <input type="time" name="time" ng-model="hourSaturdayOut"/>
+            </div>-->
+
+            <!-- Domingo -->
+            <!--<div style="margin: 1px 1px 10px" class="row">  
+              <input type="checkbox" ng-model="week[6].selected">
+                  <label style="margin: -6px 10px">{{ week[6].dia }}</label>
+                  <input type="time" name="time" ng-model="hourSundayIn" />
+                  <input type="time" name="time" ng-model="hourSundayOut"/>
+            </div>-->
+
 
             <div class="box-actions">
                 <button ng-click="save()" class="btn btn-success">Salvar</button>

@@ -2,20 +2,44 @@ angular.
 module("rondaApp")
 .controller("FuncRondaController", ['$scope', 'FuncRondaService', '$window', '$location', '$mdDialog', function($scope, FuncRondaService, $window, $location, $mdDialog){
        
+    $scope.ronda                = {};  
     $scope.listEmployees        = [];   
     $scope.listLocais           = [];
+    $scope.codfunc;
+    $scope.codlocal;
 
     $scope.week                 = [{dia: 'Segunda'}, {dia: 'Terça'}, {dia:'Quarta'}, {dia: 'Quinta'}, {dia: 'Sexta'}, {dia: 'Sábado'}, {dia:'Domingo'}];
     $scope.save          = save;  
+    $scope.update        = update;
+    $scope.remove        = remove;
+    $scope.cancel        = cancel;
+
     
+
     $scope.hourMondayIn;  
     $scope.hourMondayOut;  
-        
-
+    $scope.hourTuesdayIn;
+    $scope.hourTuesdayOut;
+    $scope.hourWednesdayIn;
+    $scope.hourWednesdayOut;
+    $scope.hourThursdayIn;
+    $scope.hourThursdayOut;
+    $scope.hourFridayIn;
+    $scope.hourFridayOut;
+    $scope.hourSaturdayIn;
+    $scope.hourSaturdayOut;
+    $scope.hourSundayIn;
+    $scope.hourSundayOut;    
 
     list();    
         
     function list(){
+
+        FuncRondaService.getRondas().then(function(response){
+             $scope.rondas = response.data;
+        });
+
+
         FuncRondaService.getLocais().then(function(response){
             $scope.listLocais = response.data;
             
@@ -45,21 +69,39 @@ module("rondaApp")
             
             });
         });
-       
+
     }
        
     function save(){
 
         angular.forEach($scope.week, function(day){
           if (day.selected){
-            console.log(day.dia);
-            console.log($scope.hourMondayIn);
-            console.log($scope.hourMondayOut);
+            
+            alert(day.dia);
+            alert($scope.hourMondayIn);
+            alert($scope.hourMondayOut);
+            alert($scope.codfunc);
+            alert($scope.codlocal);
           } 
         });
 
+        /*$scope.ronda.codfunc = $scope.codfunc;
+        $scope.ronda.codlocal = $scope.codlocal;
 
+        FuncRondaService.save(ronda).then(list);
+        $scope.ronda = {};*/
+    }
 
+    function update(ronda){
+        $scope.ronda = angular.copy(ronda);
+    }
+    
+    function remove(ronda){
+        FuncRondaService.delete(ronda).then(list);
+    }
+    
+    function cancel(){
+        $scope.ronda = {};
     }   
        
 }]);
