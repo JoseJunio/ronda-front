@@ -6,3 +6,11 @@ body{
 	width: 100px;
 	height: 100%;
 }
+
+.timeIn{
+	margin-left: 50px;
+}
+
+.timeOut{
+  	margin-left: 40px;
+}
