@@ -76,14 +76,14 @@ module("rondaApp")
 
         var rota = [];
 
-        /*rota.codfunc            = $scope.codfunc.id;
-        rota.codlocal           = $scope.codlocal.id;*/
+        rota.codfunc            = $scope.codfunc.id;
+        rota.codlocal           = $scope.codlocal.id;
         rota.dias_trabalho      = '[';
 
         angular.forEach($scope.week, function(day){
           if (day.selected){
             
-           /* switch(day.dia){
+           switch(day.dia){
                     case 'Segunda':
                         rota.dias_trabalho += "{'Dia': 'Segunda', 'horaInicio': '" + $scope.hourMondayIn + "', 'horaFim': '" + $scope.hourMondayOut +  "' } ";   
                         break;
@@ -106,9 +106,7 @@ module("rondaApp")
                         rota.dias_trabalho += "{'Dia': 'Domingo', 'horaInicio': '" + $scope.hourSundayIn + "', 'horaFim': '" + $scope.hourSundayOut +  "' }";
                         break;
                     default:
-                        break;
-
-            }  */
+            }  
 
             
             
