@@ -40,9 +40,9 @@ angular.
             
             if(employee.id){
                //return $http.put(api + "/" + employee.id, employee);
-			   return $http.put(api, employee);
+			         return $http.put(api, employee);
             }else{
-			   return $http.post(api, employee);
+			         return $http.post(api, employee);
                //return $http.post(api, employee);
             }
           

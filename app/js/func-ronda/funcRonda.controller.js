@@ -2,7 +2,7 @@ angular.
 module("rondaApp")
 .controller("FuncRondaController", ['$scope', 'FuncRondaService', '$window', '$location', '$mdDialog', function($scope, FuncRondaService, $window, $location, $mdDialog){
        
-    $scope.ronda                = {};  
+    $scope.ronda                = {};
     $scope.listEmployees        = [];   
     $scope.listLocais           = [];
     $scope.codfunc;
@@ -74,22 +74,49 @@ module("rondaApp")
        
     function save(){
 
+        var rota;
+
+        rota.codfunc            = $scope.codfunc.id;
+        rota.codlocal           = $scope.codlocal.id;
+        rota.dias_trabalho      = '[';
+
         angular.forEach($scope.week, function(day){
           if (day.selected){
             
-            alert(day.dia);
-            alert($scope.hourMondayIn);
-            alert($scope.hourMondayOut);
-            alert($scope.codfunc);
-            alert($scope.codlocal);
+            switch(day.dia){
+                    case 'Segunda':
+                        rota.dias_trabalho += "{'Dia': 'Segunda', 'horaInicio': '" + $scope.hourMondayIn + "', 'horaFim': '" + $scope.hourMondayOut "' }"   
+                        break;
+                    case 'Terça':
+                        rota.dias_trabalho += "{'Dia': 'Terça', 'horaInicio': '" + $scope.hourTuesdayIn + "', 'horaFim': '" + $scope.hourTuesdayOut "' }"  
+                        break;
+                    case 'Quarta':
+                        rota.dias_trabalho += "{'Dia': 'Quarta', 'horaInicio': '" + $scope.hourWednesdayIn + "', 'horaFim': '" + $scope.hourWednesdayOut "' }"  
+                        break;
+                    case 'Quinta':
+                        rota.dias_trabalho += "{'Dia': 'Quinta', 'horaInicio': '" + $scope.hourThursdayIn + "', 'horaFim': '" + $scope.hourThursdayOut "' }"  
+                        break;
+                    case 'Sexta':
+                        rota.dias_trabalho += "{'Dia': 'Sexta', 'horaInicio': '" + $scope.hourFridayIn + "', 'horaFim': '" + $scope.hourFridayOut "' }"  
+                        break;
+                    case 'Sábado':
+                        rota.dias_trabalho += "{'Dia': 'Sábado', 'horaInicio': '" + $scope.hourSaturdayIn + "', 'horaFim': '" + $scope.hourSaturdayOut "' }"  
+                        break;
+                    case 'Domingo':
+                        rota.dias_trabalho += "{'Dia': 'Domingo', 'horaInicio': '" + $scope.hourSundayIn + "', 'horaFim': '" + $scope.hourSundayOut "' }"  
+                        break;
+                    default:
+                        break;
+
+            }  
+
+            rota.dias_trabalho += ']'; 
+
+            
           } 
         });
 
-        /*$scope.ronda.codfunc = $scope.codfunc;
-        $scope.ronda.codlocal = $scope.codlocal;
-
-        FuncRondaService.save(ronda).then(list);
-        $scope.ronda = {};*/
+       //FuncRondaService.save().then(list);
     }
 
     function update(ronda){
