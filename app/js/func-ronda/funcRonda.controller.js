@@ -111,23 +111,23 @@ module("rondaApp")
 
         rota.dias_trabalho += ']'; 
 
-       //FuncRondaService.save(rota).then(list);
+       FuncRondaService.save(rota).then(list);
     }
 
     function formatHour(time){
 
         var format = "";
 
-        if(time.getHour() >= 0 && time.getHour() <= 9){
-            format = "0" + time.getHour() + ":"
+        if(time.getHours() >= 0 && time.getHours() <= 9){
+            format = "0" + time.getHours() + ":"
         }else{
-            format = time.getHour() + ":"
+            format = time.getHours() + ":"
         }
 
-        if(time.getHour() >= 0 && time.getHour() <= 9){
-            format += "0" + time.getHour();
+        if(time.getMinutes() >= 0 && time.getMinutes() <= 9){
+            format += "0" + time.getMinutes();
         }else{
-            format += time.getHour();
+            format += time.getMinutes();
         }
 
         return format;
