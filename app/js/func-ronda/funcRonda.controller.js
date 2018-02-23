@@ -85,25 +85,25 @@ module("rondaApp")
             
             switch(day.dia){
                     case 'Segunda':
-                        rota.dias_trabalho += "{'Dia': 'Segunda', 'horaInicio': '" + $scope.hourMondayIn + "', 'horaFim': '" + $scope.hourMondayOut "' }"   
+                        rota.dias_trabalho += "{'Dia': 'Segunda', 'horaInicio': '" + $scope.hourMondayIn + "', 'horaFim': '" + $scope.hourMondayOut +  "' } ";   
                         break;
                     case 'Terça':
-                        rota.dias_trabalho += "{'Dia': 'Terça', 'horaInicio': '" + $scope.hourTuesdayIn + "', 'horaFim': '" + $scope.hourTuesdayOut "' }"  
+                        rota.dias_trabalho += "{'Dia': 'Terça', 'horaInicio': '" + $scope.hourTuesdayIn + "', 'horaFim': '" + $scope.hourTuesdayOut +  "' } "; 
                         break;
                     case 'Quarta':
-                        rota.dias_trabalho += "{'Dia': 'Quarta', 'horaInicio': '" + $scope.hourWednesdayIn + "', 'horaFim': '" + $scope.hourWednesdayOut "' }"  
+                        rota.dias_trabalho += "{'Dia': 'Quarta', 'horaInicio': '" + $scope.hourWednesdayIn + "', 'horaFim': '" + $scope.hourWednesdayOut + "' } ";
                         break;
                     case 'Quinta':
-                        rota.dias_trabalho += "{'Dia': 'Quinta', 'horaInicio': '" + $scope.hourThursdayIn + "', 'horaFim': '" + $scope.hourThursdayOut "' }"  
+                        rota.dias_trabalho += "{'Dia': 'Quinta', 'horaInicio': '" + $scope.hourThursdayIn + "', 'horaFim': '" + $scope.hourThursdayOut + "' } "; 
                         break;
                     case 'Sexta':
-                        rota.dias_trabalho += "{'Dia': 'Sexta', 'horaInicio': '" + $scope.hourFridayIn + "', 'horaFim': '" + $scope.hourFridayOut "' }"  
+                        rota.dias_trabalho += "{'Dia': 'Sexta', 'horaInicio': '" + $scope.hourFridayIn + "', 'horaFim': '" + $scope.hourFridayOut + "' } ";
                         break;
                     case 'Sábado':
-                        rota.dias_trabalho += "{'Dia': 'Sábado', 'horaInicio': '" + $scope.hourSaturdayIn + "', 'horaFim': '" + $scope.hourSaturdayOut "' }"  
+                        rota.dias_trabalho += "{'Dia': 'Sábado', 'horaInicio': '" + $scope.hourSaturdayIn + "', 'horaFim': '" + $scope.hourSaturdayOut + "' } "; 
                         break;
                     case 'Domingo':
-                        rota.dias_trabalho += "{'Dia': 'Domingo', 'horaInicio': '" + $scope.hourSundayIn + "', 'horaFim': '" + $scope.hourSundayOut "' }"  
+                        rota.dias_trabalho += "{'Dia': 'Domingo', 'horaInicio': '" + $scope.hourSundayIn + "', 'horaFim': '" + $scope.hourSundayOut +  "' }";
                         break;
                     default:
                         break;
