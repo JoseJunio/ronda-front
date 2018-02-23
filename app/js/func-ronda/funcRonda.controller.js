@@ -81,42 +81,58 @@ module("rondaApp")
         rota.dias_trabalho      = '[';
 
         angular.forEach($scope.week, function(day){
-          if (day.selected){
+            if (day.selected){
             
-           switch(day.dia){
-                    case 'Segunda':
-                        rota.dias_trabalho += "{'Dia': 'Segunda', 'horaInicio': '" + $scope.hourMondayIn + "', 'horaFim': '" + $scope.hourMondayOut +  "' } ";   
-                        break;
-                    case 'Terça':
-                        rota.dias_trabalho += "{'Dia': 'Terça', 'horaInicio': '" + $scope.hourTuesdayIn + "', 'horaFim': '" + $scope.hourTuesdayOut +  "' } "; 
-                        break;
-                    case 'Quarta':
-                        rota.dias_trabalho += "{'Dia': 'Quarta', 'horaInicio': '" + $scope.hourWednesdayIn + "', 'horaFim': '" + $scope.hourWednesdayOut + "' } ";
-                        break;
-                    case 'Quinta':
-                        rota.dias_trabalho += "{'Dia': 'Quinta', 'horaInicio': '" + $scope.hourThursdayIn + "', 'horaFim': '" + $scope.hourThursdayOut + "' } "; 
-                        break;
-                    case 'Sexta':
-                        rota.dias_trabalho += "{'Dia': 'Sexta', 'horaInicio': '" + $scope.hourFridayIn + "', 'horaFim': '" + $scope.hourFridayOut + "' } ";
-                        break;
-                    case 'Sábado':
-                        rota.dias_trabalho += "{'Dia': 'Sábado', 'horaInicio': '" + $scope.hourSaturdayIn + "', 'horaFim': '" + $scope.hourSaturdayOut + "' } "; 
-                        break;
-                    case 'Domingo':
-                        rota.dias_trabalho += "{'Dia': 'Domingo', 'horaInicio': '" + $scope.hourSundayIn + "', 'horaFim': '" + $scope.hourSundayOut +  "' }";
-                        break;
-                    default:
-            }  
-
-            
-            
-          } 
+               switch(day.dia){
+                        case 'Segunda':
+                            rota.dias_trabalho += "{'Dia': 'Segunda', 'horaInicio': '" + formatHour($scope.hourMondayIn) + "', 'horaFim': '" + formatHour($scope.hourMondayOut) +  "' } ";   
+                            break;
+                        case 'Terça':
+                            rota.dias_trabalho += "{'Dia': 'Terça', 'horaInicio': '" + formatHour($scope.hourTuesdayIn) + "', 'horaFim': '" + formatHour($scope.hourTuesdayOut) +  "' } "; 
+                            break;
+                        case 'Quarta':
+                            rota.dias_trabalho += "{'Dia': 'Quarta', 'horaInicio': '" + formatHour($scope.hourWednesdayIn) + "', 'horaFim': '" + formatHour($scope.hourWednesdayOut) + "' } ";
+                            break;
+                        case 'Quinta':
+                            rota.dias_trabalho += "{'Dia': 'Quinta', 'horaInicio': '" + formatHour($scope.hourThursdayIn) + "', 'horaFim': '" + formatHour($scope.hourThursdayOut) + "' } "; 
+                            break;
+                        case 'Sexta':
+                            rota.dias_trabalho += "{'Dia': 'Sexta', 'horaInicio': '" + formatHour($scope.hourFridayIn) + "', 'horaFim': '" + formatHour($scope.hourFridayOut) + "' } ";
+                            break;
+                        case 'Sábado':
+                            rota.dias_trabalho += "{'Dia': 'Sábado', 'horaInicio': '" + formatHour($scope.hourSaturdayIn) + "', 'horaFim': '" + formatHour($scope.hourSaturdayOut) + "' } "; 
+                            break;
+                        case 'Domingo':
+                            rota.dias_trabalho += "{'Dia': 'Domingo', 'horaInicio': '" + formatHour($scope.hourSundayIn) + "', 'horaFim': '" + formatHour($scope.hourSundayOut) +  "' }";
+                            break;
+                }  
+            } 
         });
 
         rota.dias_trabalho += ']'; 
 
-       //FuncRondaService.save().then(list);
+       //FuncRondaService.save(rota).then(list);
     }
+
+    function formatHour(time){
+
+        var format = "";
+
+        if(time.getHour() >= 0 && time.getHour() <= 9){
+            format = "0" + time.getHour() + ":"
+        }else{
+            format = time.getHour() + ":"
+        }
+
+        if(time.getHour() >= 0 && time.getHour() <= 9){
+            format += "0" + time.getHour();
+        }else{
+            format += time.getHour();
+        }
+
+        return format;
+
+    };
 
     function update(ronda){
         $scope.ronda = angular.copy(ronda);
